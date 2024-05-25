@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juanhern <juanhern@student.42madrid.es>    +#+  +:+       +#+        */
+/*   By: juanhern <juanhern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 11:17:07 by juanhern          #+#    #+#             */
-/*   Updated: 2024/04/11 20:31:01 by juanhern         ###   ########.fr       */
+/*   Updated: 2024/05/25 11:46:53 by juanhern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,13 +101,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
-	size_t	i;
 
 	if (!s1 || !set)
 		return (NULL);
 	start = ft_get_start(s1, set);
 	end = ft_get_end(s1, set);
-	i = 0;
 	if (ft_strlen(set) == 0)
 		return (ft_mem_alloc(s1, 0, ft_strlen(s1) - 1));
 	else

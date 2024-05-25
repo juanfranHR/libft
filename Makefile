@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: juanhern <juanhern@student.42madrid.es>    +#+  +:+       +#+         #
+#    By: juanhern <juanhern@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/09 08:17:30 by juanhern          #+#    #+#              #
-#    Updated: 2024/04/12 12:14:27 by juanhern         ###   ########.fr        #
+#    Updated: 2024/05/25 12:39:07 by juanhern         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
-INCLUDE = libft.h
+AR = ar rcs
 
 SRC =	ft_memset.c ft_bzero.c ft_strlen.c ft_atoi.c ft_isdigit.c ft_isalpha.c\
 ft_isprint.c ft_isascii.c ft_isalnum.c ft_memchr.c ft_memcpy.c ft_memcpy.c\
@@ -33,20 +33,25 @@ OBJS = $(SRC:.c=.o)
 
 OBJS_BONUS = $(BONUS_SRC:.c=.o)
 
+BONUS_CACHE = .cache
+
 all: $(NAME)
 
-$(NAME): $(OBJS)  $(INCLUDE)
-	ar rcs $(NAME) $(OBJS) 
+bonus: $(BONUS_CACHE)
 
-bonus: $(OBJS) $(OBJS_BONUS) $(INCLUDE)
-	ar rcs $(NAME) $(OBJS_BONUS) $(OBJS)
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS) 
+
+$(BONUS_CACHE): $(OBJS_BONUS)
+	$(AR) $(NAME) $(OBJS_BONUS)
+	touch $(BONUS_CACHE)
 
 clean:
-	rm -f $(OBJS) $(OBJS_BONUS)
+	rm -f $(OBJS) $(OBJS_BONUS) $(BONUS_CACHE)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

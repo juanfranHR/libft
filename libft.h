@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juanhern <juanhern@student.42madrid.es>    +#+  +:+       +#+        */
+/*   By: juanhern <juanhern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 11:08:42 by juanhern          #+#    #+#             */
-/*   Updated: 2024/04/08 13:14:02 by juanhern         ###   ########.fr       */
+/*   Updated: 2024/05/25 12:55:25 by juanhern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdlib.h>
-#include <unistd.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <ctype.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -65,3 +68,4 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
+#endif

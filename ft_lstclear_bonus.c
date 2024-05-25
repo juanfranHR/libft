@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juanhern <juanhern@student.42madrid.es>    +#+  +:+       +#+        */
+/*   By: juanhern <juanhern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 11:13:04 by juanhern          #+#    #+#             */
-/*   Updated: 2024/04/11 20:33:06 by juanhern         ###   ########.fr       */
+/*   Updated: 2024/05/25 12:42:54 by juanhern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"//REVISAR
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
