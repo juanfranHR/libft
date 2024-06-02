@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"//REVISAR
+#include "libft.h"
 #include <stdio.h>
-#include <string.h>
 
 static int	ft_compare(const char *haystack, const char *needle, size_t i,
 		size_t len)
@@ -39,6 +38,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return (NULL);
 	while (*haystack && i < len)
 	{
+		printf("Haystack: %c\t needle:%c\n", *haystack, *needle);
 		if ((*haystack == *needle) && ft_compare(haystack, needle, i, len))
 			return ((char *)haystack);
 		haystack++;

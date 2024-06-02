@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"//REVISAR
+#include "libft.h"
 
 static size_t	ft_get_start(char const *s1, char const *set)
 {
